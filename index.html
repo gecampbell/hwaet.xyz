@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<!-- Copyright(c)2025 Glen Campbell -->
+<head>
+<title>HE&AElig;T.XYZ</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="This is your home page.">
+<style type="text/css">
+@import url('https://glencampbell.xyz/glencampbell.css');
+body {
+max-width: 100%;
+line-height: auto;
+margin-left: 4em;
+margin-right: 4em;
+}
+header {
+text-align: right;
+border-bottom: 1px silver solid;
+}
+footer {
+padding-left: 4em;
+font-size: smaller;
+position: fixed;
+bottom: 0;
+}
+#ampm {
+font-size: smaller;
+}
+a {
+color: gray;
+}
+a:hover {
+text-decoration: none;
+color: black;
+}
+#time { 
+line-height: 200%;
+}
+h1 {
+/*text-align: center;*/
+}
+.day, .date {
+color: gray;
+}
+.day {
+}
+.time {
+color: black;
+display: block;
+font-size: 400%;
+font-weight: bold;
+/*letter-spacing: -.07em;*/
+}
+.day:after {
+content: ", "; 
+}
+</style>
+</head>
+<body>
+<header>
+HW&AElig;T.XYZ
+</header>
+<h1 class="datetime" id="time">00:00</h1>
+<footer>
+&copy;2025 <a href="https://glenc.co">Glen Campbell</a>.
+All rights reserved.
+</footer>
+</body>
+</html>
+<script type="text/javascript">
+function GetClock(n){tday=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"),tmonth=new Array("January","February","March","April","May","June","July","August","September","October","November","December"),d=new Date,nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getYear(),nhour=d.getHours(),nmin=d.getMinutes(),nyear<1e3&&(nyear+=1900),0==nhour?(ap="AM",nhour=12):nhour<=11?ap="AM":12==nhour?ap="PM":nhour>=13&&(ap="PM",nhour-=12),nmin<=9&&(nmin="0"+nmin),document.getElementById(n).innerHTML='<span class="day">'+tday[nday]+'</span> <span class="date">'+tmonth[nmonth]+" "+ndate+", "+nyear+'</span> <span class="time">'+nhour+":"+nmin+'<span id="ampm">'+ap+'</span></span>',setTimeout("GetClock('"+n+"')",1e3)}window.onload=GetClock('time');
+</script>
