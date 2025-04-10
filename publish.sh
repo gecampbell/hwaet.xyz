@@ -2,12 +2,11 @@
 
 if [ -f index.html ]; then
   echo "Synchronizing..."
-  aws s3 sync . s3://xn--hwt-zla.xyz \
+  aws s3 sync . s3://s3.xn--hwt-zla.xyz \
     --exclude '*.*' \
     --include '*.css' \
     --include '*.html' \
     --cache-control 'max-age=600' \
-    --acl public-read \
     --delete
 else
   echo "You're not in the right directory, exiting..."
